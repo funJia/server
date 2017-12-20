@@ -28,8 +28,12 @@
                                     compaction: go.TreeLayout.CompactionNone
                                 }),
                         "undoManager.isEnabled": true,
+                        //单击节点触发该事件
                         ObjectSingleClicked: function (data) {
-                            window.open("./taskDetail.html?id=" + data.subject.id);
+                            if (data.subject.url) {
+                                //跳转到配置的地址
+                                window.open(data.subject.url);
+                            }
                         }
                     });
 
@@ -44,7 +48,8 @@
                             { font: "bold 12pt Arial, sans-serif", margin: new go.Margin(4, 2, 2, 2) },
                             //绑定模型字段
                             new go.Binding("text"),
-                            new go.Binding("id"))
+                            new go.Binding("id"),
+                            new go.Binding("url"))
                     ),
                     $(go.Panel,  // this is underneath the "BODY"
                         { height: 15 },  // always this height, even if the TreeExpanderButton is not visible
@@ -111,7 +116,7 @@
         window.onload = function () {
             window.nodeDataArray = [];
             window.nodeDataArray.push(
-                { key: 1, text: "模块安排", fill: "#f68c06", stroke: "#4d90fe" }
+                { key: 1, text: "安装Nginx", fill: "#f68c06", stroke: "#4d90fe" }
             );
             keyIndex = 1;
             jQuery.getJSON("./json/index.json", function (data) {
@@ -120,11 +125,13 @@
                     item = data[i];
                     keyIndex++;
                     var option = {
-                        key: keyIndex, id: item.id, text: item.name, fill: "#f68c06",
+                        key: keyIndex, id: item.id,
+                        text: item.name, url: item.url,
+                        fill: "#f68c06",
                         stroke: "#4d90fe", parent: 1
-                    };  
+                    };
                     window.nodeDataArray.push(option);
-                    getModule(item.module, keyIndex);     
+                    getModule(item.module, keyIndex);
                 }
                 init();
             });

@@ -1,68 +1,29 @@
 [
     {
-        "name": "webapi",
+        "name": "在线安装",
         "id": "1",
+        "url":"http://note.youdao.com/noteshare?id=fdbdf098ff6a26eb4d25824916901965&sub=EC925B20536D4459829080C611DF49F1",
         "module": [
             {
-                "name": "上传sqlLite",
+                "name": "换源",
                 "id": "1-1",
                 "module": []
             },
             {
-                "name": "上传日志",
+                "name": "安装",
                 "id": "1-2",
                 "module": []
-            }
-        ]
-    },
-    {
-        "name": "解析sqllite线程",
-        "id": "2",
-        "module": [
-            {
-                "name": "XXFP工作流",
-                "id": "2-1"                
             },
             {
-                "name": "XXFP-MX工作流",
-                "id": "2-2"                
-            },
-            {
-                "name": "BM_KH工作流",
-                "id": "2-3"                
-            }                        
-        ]
-    },
-    {
-        "name": "删除本地库中记录线程",
-        "id": "3",
-        "module": [
-            {
-                "name": "删除已解析sqlite记录",
-                "id": "3-1"                
-            },
-            {
-                "name": "删除sqlite文件",
-                "id": "3-2"                
+                "name": "注册到系统服务",
+                "id": "1-3",
+                "module": []
             }            
         ]
     },
     {
-        "name": "log4net日志管理",
-        "id": "4",
-        "module": [
-            {
-                "name": "XXFP入mysql库异常日志",
-                "id": "4-1"                
-            },
-            {
-                "name": "XXFP-MX入mysql库异常日志",
-                "id": "4-2"                
-            },
-            {
-                "name": "BM_KH入mysql库异常日志",
-                "id": "4-3"                
-            }             
-        ]
+        "name": "离线安装",
+        "id": "2",
+        "module": []
     }
 ]
